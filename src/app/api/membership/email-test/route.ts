@@ -1,5 +1,5 @@
 import { randomUUID, timingSafeEqual } from "node:crypto";
-import { sendMembershipCardEmail } from "@/lib/membership-email-provider";
+import { sendMembershipCardEmail, membershipEmailConfigurationIssues } from "@/lib/membership-email-provider";
 import { siteOrigin } from "@/lib/membership-server";
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -16,6 +16,7 @@ export async function POST(request: Request) {
   const a = Buffer.from(expected), b = Buffer.from(supplied);
   if (a.length !== b.length || !timingSafeEqual(a, b)) return reply("The password does not match this deployment's MEMBERSHIP_TEST_TOKEN. Enter the exact saved value, without quotation marks. A 32-character length alone does not make it match.", 403);
   if (process.env.MEMBERSHIP_EMAIL_PROVIDER !== "gmail") return reply("The deployed email provider is not Gmail.", 503);
+  if (membershipEmailConfigurationIssues().length) return reply("Gmail configuration is invalid. GMAIL_USER must be a Gmail address; GMAIL_APP_PASSWORD must be Google's 16-character App Password, not your Gmail login password. Save corrected Production values and redeploy.", 503);
   const recipient = process.env.MEMBERSHIP_TEST_EMAIL?.trim().toLowerCase();
   if (!recipient || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipient)) return reply("Set MEMBERSHIP_TEST_EMAIL in Vercel Production, then redeploy.", 503);
   try {

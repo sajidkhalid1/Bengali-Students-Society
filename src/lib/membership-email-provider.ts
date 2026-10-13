@@ -45,7 +45,13 @@ export async function sendMembershipCardEmail(message: CardEmail, memberId: stri
       const accepted = info.accepted.map(address => address.toLowerCase());
       if (!message.to.every(address => accepted.includes(address.toLowerCase())) || !info.messageId) throw new Error("Email not accepted.");
       return { id: info.messageId };
-    } catch {
+    } catch (error) {
+      const details = error as { code?: unknown; responseCode?: unknown };
+      const codes = ["EAUTH", "ECONNECTION", "ETIMEDOUT", "ESOCKET", "EDNS", "EENVELOPE", "EMESSAGE", "EPROTOCOL"];
+      console.error("BSS_GMAIL_SEND_FAILED", {
+        code: typeof details?.code === "string" && codes.includes(details.code) ? details.code : "UNKNOWN",
+        responseCode: typeof details?.responseCode === "number" && details.responseCode >= 100 && details.responseCode <= 599 ? details.responseCode : null,
+      });
       reportServiceFailure("gmail");
       throw new Error("Card email was not accepted. Retry required.");
     } finally { transport.close(); }
