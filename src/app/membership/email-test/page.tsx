@@ -1,0 +1,4 @@
+export const metadata = { title: "Private email test", robots: { index: false, follow: false } };
+export default function EmailTestPage() {
+  return <main id="main-content" className="container section"><p className="eyebrow">PRIVATE ADMIN TEST</p><h1>Test membership email delivery.</h1><p>This sends a test message through the website’s Gmail sender to the configured MEMBERSHIP_TEST_EMAIL inbox. It does not create a membership or charge a payment.</p><form action="/api/membership/email-test" method="post"><label htmlFor="email-test-password">Membership test password</label><input id="email-test-password" name="password" type="password" required autoComplete="off" minLength={32} maxLength={256}/><button className="button" type="submit">Send test email</button></form><p>Use your MEMBERSHIP_TEST_TOKEN value. Enter it here only; do not share it in chat.</p></main>;
+}
