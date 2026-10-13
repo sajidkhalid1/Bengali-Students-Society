@@ -1,0 +1,11 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Events & Traditions", description: "Meet and Greet, Career Fair, Asia Cup, Pitha Utshob, Grand Iftar, free iftars, and Royal Mezban with BSS." };
+import { SeasonHighlights } from "@/components/season-highlights";
+import { traditions } from "@/lib/events";
+
+export default function EventsPage() {
+  return <main id="main-content"><div className="inner-page-hero"><div className="container"><p className="eyebrow">THE BSS YEAR / 2026–2027</p><h1>Traditions we love.<br /><em>Memories to make.</em></h1><p>From your first hello to a feast with friends, there’s more than one way to find your people. Explore the events that bring BSS together each year.</p></div></div><section className="container section" aria-labelledby="traditions-title"><div className="section-top"><div><p className="eyebrow">OUR ANNUAL EVENTS</p><h2 id="traditions-title">A year of coming together.</h2></div><p className="section-description">Dates, venues, ticket prices, and registration links will be added as each event is confirmed.</p></div><SeasonHighlights /><div className="traditions-grid">{traditions.map((event, index) => <article className="tradition-card" id={`event-${index + 1}`} key={event.title}><div className="tradition-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div><p className="eyebrow">{event.category}</p><h3>{event.title}</h3><p>{event.detail}</p><span className="event-status">{event.status ?? (event.completed ? "2026 EVENT COMPLETED" : "NEXT EVENT DETAILS COMING SOON")}</span>{event.completed && <Link className="text-link" href="/events/asia-cup-2026">Explore the Asia Cup photo album ↗</Link>}</article>)}</div><aside className="new-events"><Image src="/images/outdoors.webp" alt="BSS friends enjoying an outdoor gathering" width={800} height={530} /><div><p className="eyebrow">AND THAT’S JUST THE START</p><h2>New ideas.<br />Same BSS energy.</h2><p>We’re introducing more events this year, with new ways to connect and just as much fun. Stay close for the announcements.</p><Link href="/gallery" className="text-link">A look back at our gatherings ↗</Link></div></aside></section></main>;
+}

@@ -1,0 +1,9 @@
+export const traditions = [
+  { title: "Meet and Greet", category: "FRIENDSHIP", image: "/images/events/photo-10.webp", status: "FREE · COMING SOON", detail: "Our free Meet and Greet is coming soon! Dates and venue will be announced shortly. Keep an eye on our socials and website." },
+  { title: "Career Fair", category: "CONNECTION & GROWTH", image: "/images/events/photo-9.webp", status: "OCTOBER 23 · FREE ENTRY", detail: "Professional Development Workshop & Mentoring Program: October 23, 2026 at 5 PM, Hunter Student Commons, HNSC 122. Connect with industry professionals, explore career guidance and mentoring, and get a free professional headshot." },
+  { title: "Asia Cup", category: "SPORT & COMMUNITY", image: "/images/events/photo-8.webp", detail: "Bangladesh A won one match, while Bangladesh were unable to secure a victory. Both teams were knocked out in the group stage. Thank you to everyone who played and cheered us on—we hope to come back stronger next year!", completed: true },
+  { title: "Pitha Utshob", category: "A TASTE OF BENGAL", detail: "Celebrate the comfort and variety of Bengali pitha—a delicious reason to gather, share traditions, and enjoy a taste of home." },
+  { title: "Grand Iftar", category: "RAMADAN TOGETHER", image: "/images/events/photo-11.webp", detail: "Come together to break the fast and share an evening of food, reflection, and community during Ramadan." },
+  { title: "Free Iftar Gatherings", category: "SHARING & GENEROSITY", detail: "Alongside Grand Iftar, several free iftar events bring our community together around a shared meal." },
+  { title: "Royal Mezban", category: "FOOD & HOSPITALITY", image: "/images/events/photo-7.webp", detail: "A celebration of Bengali hospitality and the Mezban tradition, with a shared feast and plenty of good company." },
+];
