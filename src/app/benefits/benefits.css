@@ -8,13 +8,6 @@
 .benefits-hero h1 em, .benefits-section-heading h2 em, .benefits-join h2 em { color: #e9c788; }
 .benefits-intro { max-width: 580px; color: #c6d4c7; font-size: 1rem; margin-bottom: 28px; }
 .benefits-hero .button { gap: 30px; }
-.benefits-hero-stamp { width: 230px; height: 230px; flex: 0 0 230px; border: 1px solid #e2c585; border-radius: 50%; position: relative; display: grid; place-items: center; color: #e2c585; transform: rotate(8deg); }
-.stamp-orbit { position: absolute; inset: -1px; border-radius: 50%; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: .24em; padding-top: 9px; }
-.stamp-center { display: flex; align-items: center; gap: 14px; transform: rotate(-8deg); }
-.stamp-center b { font-family: Georgia, serif; font-size: 5.5rem; letter-spacing: -.09em; line-height: .9; font-weight: 400; }
-.stamp-center small { font-size: .65rem; line-height: 1.35; letter-spacing: .14em; font-weight: 700; }
-.benefits-ribbon { display: flex; overflow: hidden; white-space: nowrap; gap: 12px; background: #f3ead2; color: #214435; padding: 12px 0; font-size: .68rem; letter-spacing: .23em; font-weight: 700; }
-.benefits-ribbon span { flex: 0 0 auto; }
 .benefits-list-section { padding-block: 96px 88px; }
 .benefits-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 44px; margin-bottom: 44px; }
 .benefits-section-heading .eyebrow { margin-bottom: 10px; }
@@ -44,11 +37,6 @@
 .benefits-join .button { flex-shrink: 0; }
 @media (max-width: 760px) {
   .benefits-hero-inner { min-height: 0; align-items: flex-start; padding-block: 66px 76px; }
-  .benefits-hero-stamp { width: 150px; height: 150px; flex-basis: 150px; margin-top: 35px; }
-  .stamp-center { gap: 8px; }
-  .stamp-center b { font-size: 3.9rem; }
-  .stamp-center small { font-size: .5rem; }
-  .stamp-orbit { font-size: 7px; letter-spacing: .13em; }
   .benefits-section-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
   .benefits-section-heading > p { margin: 0; }
   .benefits-card-grid { gap: 14px; }
@@ -58,10 +46,6 @@
 @media (max-width: 540px) {
   .benefits-hero-inner { display: block; padding-block: 53px 68px; }
   .benefits-hero h1 { font-size: clamp(3.1rem, 13vw, 4rem); }
-  .benefits-hero-stamp { position: absolute; width: 92px; height: 92px; right: 24px; bottom: 20px; opacity: .72; }
-  .stamp-center b { font-size: 2.5rem; }
-  .stamp-center small { font-size: .34rem; }
-  .stamp-orbit { font-size: 4px; letter-spacing: .06em; padding-top: 4px; }
   .benefits-list-section { padding-block: 68px 64px; }
   .benefits-card-grid { grid-template-columns: 1fr; }
   .benefit-card { min-height: 0; }
@@ -73,3 +57,31 @@
 .benefit-logo img { width: 100%; height: 100%; object-fit: contain; }
 .benefit-wordmark { flex-direction: column; align-items: stretch; justify-content: center; gap: 20px; padding-block: 20px; }
 .benefit-wordmark h3 { font: inherit; margin: 0; }
+.benefits-hero-stamp { flex: 0 0 250px; width: 250px; color: var(--gold); }
+.benefits-hero-stamp svg { display: block; width: 100%; height: auto; overflow: visible; }
+.benefits-hero-stamp circle { fill: none; stroke: currentColor; stroke-width: 1; }
+.benefits-hero-stamp .stamp-inner-ring { stroke-dasharray: 2 5; opacity: .5; }
+.benefits-hero-stamp text { fill: currentColor; }
+.stamp-arc { font: 700 10px var(--font-montserrat), Arial, sans-serif; letter-spacing: 2px; }
+.stamp-four { font: 86px Georgia, serif; }
+.stamp-caption { font: 700 8px var(--font-montserrat), Arial, sans-serif; letter-spacing: 2px; }
+.stamp-star { font-size: 15px; }
+.benefits-ribbon { overflow: hidden; background: #f3ead2; color: #214435; padding-block: 15px; }
+.benefits-marquee-track { display: flex; width: max-content; animation: benefits-marquee 65s linear infinite; will-change: transform; }
+.benefits-marquee-group { display: flex; align-items: center; min-width: 100vw; gap: 36px; padding-right: 36px; flex-shrink: 0; }
+.benefits-marquee-group span { display: inline-flex; align-items: center; gap: 25px; white-space: nowrap; font-size: .7rem; letter-spacing: .2em; font-weight: 700; }
+.benefits-marquee-group i { font-style: normal; color: #a74b35; }
+.benefits-ribbon:hover .benefits-marquee-track { animation-play-state: paused; }
+@keyframes benefits-marquee { to { transform: translateX(-50%); } }
+.benefits-deals-section { padding-bottom: 96px; }
+.benefits-deals-empty { display: grid; grid-template-columns: auto 1fr; gap: 20px 28px; padding: clamp(24px, 4vw, 44px); border: 1px dashed #a48958; background: radial-gradient(ellipse at top right, #234d39, #0a3025); border-radius: 4px 38px 4px 4px; }
+.deals-symbol { font-size: 3.5rem; line-height: 1; color: var(--gold); }
+.deals-status { display: inline-block; color: var(--gold); font-size: .65rem; letter-spacing: .16em; font-weight: 700; }
+.benefits-deals-empty h3 { font: clamp(1.8rem, 3vw, 2.5rem)/1.2 Georgia, serif; margin-block: 14px; }
+.benefits-deals-empty p { color: var(--muted); max-width: 760px; }
+.benefits-deals-empty > a { grid-column: 2; justify-self: start; }
+.benefit-card-miraj .benefit-logo { background: #ff0000; height: 180px; padding: 0; }
+@media (max-width: 760px) { .benefits-hero-stamp { flex-basis: 180px; width: 180px; align-self: center; } }
+@media (max-width: 540px) { .benefits-hero-inner { display: flex; flex-direction: column; gap: 32px; padding-bottom: 40px; } .benefits-hero-stamp { flex-basis: auto; width: 160px; align-self: flex-end; } .benefits-deals-empty { grid-template-columns: 1fr; } .benefits-deals-empty > a { grid-column: 1; } .benefits-deals-section { padding-bottom: 64px; } }
+@media (prefers-reduced-motion: reduce) { .benefits-marquee-track { animation: none; transform: none; will-change: auto; } }
+

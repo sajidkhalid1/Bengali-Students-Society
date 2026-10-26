@@ -20,18 +20,17 @@ export default function BenefitsPage() {
             <p className="benefits-intro">Your BSS membership brings you closer to campus community and local Calgary favourites. Show your active membership when you visit to access these partner offers.</p>
             <Link className="button" href="/membership">Become a member <span aria-hidden="true">↗</span></Link>
           </div>
-          <div className="benefits-hero-stamp" aria-label="Local partners, member perks">
-            <span className="stamp-orbit" aria-hidden="true">✳ &nbsp; LOCAL PARTNERS &nbsp; ✳ &nbsp; MEMBER PERKS &nbsp;</span>
-            <span className="stamp-center"><b>4</b><small>WAYS TO<br />SAVE</small></span>
+          <div className="benefits-hero-stamp" role="img" aria-label="Four local partners. Yearly membership perks.">
+            <svg viewBox="0 0 260 260" aria-hidden="true"><defs><path id="perks-top-arc" d="M 35,130 A 95,95 0 0,1 225,130" /><path id="perks-bottom-arc" d="M 35,130 A 95,95 0 0,0 225,130" /></defs><circle cx="130" cy="130" r="122" /><circle className="stamp-inner-ring" cx="130" cy="130" r="78" /><text className="stamp-arc"><textPath href="#perks-top-arc" startOffset="50%" textAnchor="middle">LOCAL PARTNERS</textPath></text><text className="stamp-arc"><textPath href="#perks-bottom-arc" startOffset="50%" textAnchor="middle">YEARLY MEMBER PERKS</textPath></text><text className="stamp-four" x="130" y="139" textAnchor="middle">4</text><text className="stamp-caption" x="130" y="164" textAnchor="middle">WAYS TO SAVE</text><text className="stamp-star" x="29" y="136">✳</text><text className="stamp-star" x="216" y="136">✳</text></svg>
           </div>
         </div>
-        <div className="benefits-ribbon" aria-hidden="true"><span>GOOD FOOD · GOOD PEOPLE · GOOD TOGETHER · </span><span>GOOD FOOD · GOOD PEOPLE · GOOD TOGETHER · </span></div>
+        <div className="benefits-ribbon" aria-hidden="true"><div className="benefits-marquee-track">{[0, 1].map(copy => <div className="benefits-marquee-group" key={copy}>{[0, 1, 2].map(index => <span key={index}>GOOD FOOD <i>✳</i> GOOD PEOPLE <i>✳</i> GOOD TOGETHER <i>✳</i></span>)}</div>)}</div></div>
       </section>
 
       <section className="container benefits-list-section" aria-labelledby="partner-offers-title">
         <div className="benefits-section-heading">
-          <div><p className="eyebrow">YOUR MEMBERSHIP, A LITTLE MORE DELICIOUS</p><h2 id="partner-offers-title">Local love.<br /><em>Member perks.</em></h2></div>
-          <p>Four Calgary partners are making your BSS membership go a little further. Explore the offers below and check each partner’s terms before ordering.</p>
+          <div><p className="eyebrow">YOUR MEMBERSHIP, A LITTLE MORE DELICIOUS</p><h2 id="partner-offers-title">Yearly membership<br /><em>perks.</em></h2></div>
+          <p>These ongoing discounts are available throughout your active membership term. Check each partner’s exclusions before ordering.</p>
         </div>
 
         <div className="benefits-card-grid">
@@ -41,13 +40,14 @@ export default function BenefitsPage() {
               <div className="benefit-wordmark">{benefit.logo && <div className="benefit-logo"><Image src={benefit.logo} alt={`${benefit.name} logo`} width={200} height={100} /></div>}<h3>{benefit.name}</h3></div>
               <div className="benefit-offer-row"><p className="benefit-discount">{benefit.offer}</p><span className="benefit-scope">{benefit.scope}</span></div>
               <p className="benefit-terms">{benefit.terms}</p>
-              {benefit.extra && <p className="benefit-extra"><span aria-hidden="true">✳</span> {benefit.extra}</p>}
               <a className="benefit-source" href={benefit.sourceUrl} target="_blank" rel="noreferrer">Visit {benefit.name} <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
         <p className="benefits-fine-print">Offers are for active BSS members and apply throughout the membership term unless stated otherwise. Promotional items and offers are excluded as listed. Please present your membership before checkout.</p>
       </section>
+
+      <section className="container benefits-deals-section" aria-labelledby="active-deals-title"><div className="benefits-section-heading"><div><p className="eyebrow">A LITTLE EXTRA, FOR A LITTLE WHILE</p><h2 id="active-deals-title">Active deals.<br /><em>Limited-time offers.</em></h2></div><p>A separate place for short-term member specials, monthly deals, and student packages. We’ll update this section as offers are confirmed.</p></div><div className="benefits-deals-empty"><span className="deals-symbol" aria-hidden="true">✳</span><div><span className="deals-status">COMING SOON</span><h3>Good things are on the way.</h3><p>No limited-time deals have been announced yet. Keep an eye here for exclusive BSS offers, including partner specials and student packages. Dates and redemption details will be added when available.</p></div><a className="text-link" href="https://www.instagram.com/bss_uofc/" target="_blank" rel="noopener noreferrer">Follow BSS for updates ↗</a></div></section>
 
       <section className="benefits-join">
         <div className="container benefits-join-inner">

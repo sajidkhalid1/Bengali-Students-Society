@@ -14,7 +14,7 @@ export type Benefit = {
 export const benefits: Benefit[] = [
   {
     id: "miraj",
-    logo: "/images/partners/miraj.webp",
+    logo: "/images/partners/miraj-official.webp",
     name: "Miraj Restaurant",
     offer: "5% off",
     scope: "All menu items",
