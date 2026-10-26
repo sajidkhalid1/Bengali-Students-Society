@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 .footer-links { display: flex; flex-wrap: wrap; gap: 12px 22px; font-size: .8rem; }
+.membership-contributions { padding-bottom: 100px; }
+.membership-contributions .contribution-panel { max-width: none; }
+.contribution-email { overflow-wrap: anywhere; color: var(--gold); }
 .contribution-panel { max-width: 800px; padding: clamp(24px, 5vw, 52px); border: 1px solid var(--gold); background: linear-gradient(140deg, #123e30e8, #06271edb), url('/images/bengali-textile.webp') center / cover; border-radius: 4px 48px 4px 4px; }
 .transfer-address { font-size: clamp(1rem, 3vw, 1.7rem); color: var(--gold); overflow-wrap: anywhere; padding-block: 16px; border-block: 1px solid var(--line); user-select: all; }
 .bengal-partner { display: flex; gap: clamp(24px, 4vw, 48px); align-items: center; padding: 32px; margin-top: 32px; border: 1px solid var(--line); background: #0c3328; }
