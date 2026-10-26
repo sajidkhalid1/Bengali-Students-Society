@@ -80,7 +80,7 @@
 .benefits-deals-empty h3 { font: clamp(1.8rem, 3vw, 2.5rem)/1.2 Georgia, serif; margin-block: 14px; }
 .benefits-deals-empty p { color: var(--muted); max-width: 760px; }
 .benefits-deals-empty > a { grid-column: 2; justify-self: start; }
-.benefit-card-miraj .benefit-logo { background: #ff0000; height: 180px; padding: 0; }
+.benefit-card-miraj .benefit-logo { background: #ff0000; }
 @media (max-width: 760px) { .benefits-hero-stamp { flex-basis: 180px; width: 180px; align-self: center; } }
 @media (max-width: 540px) { .benefits-hero-inner { display: flex; flex-direction: column; gap: 32px; padding-bottom: 40px; } .benefits-hero-stamp { flex-basis: auto; width: 160px; align-self: flex-end; } .benefits-deals-empty { grid-template-columns: 1fr; } .benefits-deals-empty > a { grid-column: 1; } .benefits-deals-section { padding-bottom: 64px; } }
 @media (prefers-reduced-motion: reduce) { .benefits-marquee-track { animation: none; transform: none; will-change: auto; } }
