@@ -1,0 +1,24 @@
+.event-carousel { min-width: 0; }
+.event-carousel .carousel-hint { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 0 0 18px; color: var(--gold); font-size: .68rem; letter-spacing: .16em; font-weight: 700; }
+.event-carousel .carousel-hint-line { display: inline-flex; gap: 9px; align-items: center; font-size: 1rem; letter-spacing: 0; }
+.event-carousel .carousel-hint-line i { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.event-carousel .carousel-track { display: flex; gap: 24px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: none; scroll-behavior: auto; cursor: grab; padding: 8px 0 26px; scrollbar-width: none; -ms-overflow-style: none; position: relative; touch-action: pan-y pinch-zoom; user-select: none; }
+.event-carousel .carousel-track::-webkit-scrollbar { display: none; }
+.event-carousel .carousel-track.is-dragging { cursor: grabbing; }
+.event-carousel .carousel-slide { flex: 0 0 31%; min-width: 0; overflow: hidden; border-radius: 2px 2px 14px 2px; scroll-snap-align: none; animation: event-card-float 5.4s ease-in-out infinite; will-change: transform; }
+.event-carousel .carousel-slide:nth-child(3n + 2) { animation-delay: -1.7s; }
+.event-carousel .carousel-slide:nth-child(3n) { animation-delay: -3.4s; }
+.event-carousel .carousel-slide .event-poster { min-height: 230px; padding: 20px; }
+.event-carousel .carousel-slide .event-poster h3 { font-size: clamp(1.65rem, 2.5vw, 2.25rem); padding-top: 34px; max-width: none; }
+.event-carousel .carousel-slide .event-category, .event-carousel .carousel-slide .event-year { font-size: .62rem; }
+.event-carousel .carousel-slide .event-body { padding: 20px; }
+.event-carousel .carousel-slide .event-body > p:last-child { font-size: .8rem; }
+.event-carousel .carousel-slide .status-label { font-size: .64rem; }
+.event-carousel .carousel-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.event-carousel .carousel-footer .carousel-position { color: var(--gold); letter-spacing: .18em; font-size: .75rem; margin: 0; white-space: nowrap; }
+.event-carousel .carousel-track:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+@keyframes event-card-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (max-width: 1080px) { .event-carousel .carousel-slide { flex-basis: 42%; } }
+@media (max-width: 760px) { .event-carousel .carousel-slide { flex-basis: 76%; } .event-carousel .carousel-track { gap: 16px; } }
+@media (prefers-reduced-motion: reduce) { .event-carousel .carousel-slide { animation: none; } .event-carousel .carousel-track { scroll-behavior: auto; } }
+.event-carousel .carousel-track::after { content: none; display: none; }

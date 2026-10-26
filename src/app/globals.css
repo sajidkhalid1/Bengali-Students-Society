@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+.footer-links { display: flex; flex-wrap: wrap; gap: 12px 22px; font-size: .8rem; }
+.contribution-panel { max-width: 800px; padding: clamp(24px, 5vw, 52px); border: 1px solid var(--gold); background: linear-gradient(140deg, #123e30e8, #06271edb), url('/images/bengali-textile.webp') center / cover; border-radius: 4px 48px 4px 4px; }
+.transfer-address { font-size: clamp(1rem, 3vw, 1.7rem); color: var(--gold); overflow-wrap: anywhere; padding-block: 16px; border-block: 1px solid var(--line); user-select: all; }
+.bengal-partner { display: flex; gap: clamp(24px, 4vw, 48px); align-items: center; padding: 32px; margin-top: 32px; border: 1px solid var(--line); background: #0c3328; }
+.bengal-partner img { width: min(32%, 220px); height: auto; border-radius: 4px; }
+.bengal-partner h3 { font: 2.2rem Georgia, serif; }
+@media (max-width: 600px) { .bengal-partner { flex-direction: column; align-items: start; padding: 24px; } .bengal-partner img { width: 160px; } }
+
 @theme inline {
   --color-forest: #00543d;
   --color-cream: #f6f0dc;

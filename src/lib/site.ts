@@ -5,8 +5,10 @@ export const site = {
   description: "A place to celebrate Bengali culture, find your community, and make campus feel a little more like home.",
   // Add verified public links here when available. Never put private credentials here.
   membershipUrl: "/membership" as string | null,
-  email: null as string | null,
-  instagramUrl: null as string | null,
+  email: "bengalistudentssociety@gmail.com",
+  instagramUrl: "https://www.instagram.com/bss_uofc/",
+  phone: "+13682996742",
+  phoneDisplay: "+1 (368) 299-6742",
 };
 
 export const navigation = [
@@ -15,6 +17,7 @@ export const navigation = [
   { label: "Team", href: "/team" },
   { label: "Gallery", href: "/gallery" },
   { label: "Membership", href: "/membership" },
+  { label: "Benefits", href: "/benefits" },
   { label: "Partners", href: "/sponsors" },
 ];
 

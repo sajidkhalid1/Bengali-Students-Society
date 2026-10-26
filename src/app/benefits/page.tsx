@@ -1,8 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { benefits } from "@/lib/benefits";
+import "./benefits.css";
 
-export const metadata: Metadata = { title: "Membership Benefits", description: "Explore BSS membership benefits, partner-location discounts, and how to use your digital membership card." };
+export const metadata: Metadata = {
+  title: "Member Benefits",
+  description: "Explore the local partner offers available to Bengali Students Society members in Calgary.",
+};
 
 export default function BenefitsPage() {
-  return <main id="main-content"><div className="inner-page-hero"><div className="container"><p className="eyebrow">MORE FROM YOUR MEMBERSHIP</p><h1>Your community.<br /><em>A few extra perks.</em></h1><p>A place in BSS, a digital card in your pocket, and member offers to discover at participating partner locations.</p><Link className="button" href="/membership">Become a member ↗</Link></div></div><section className="container section" aria-labelledby="benefits-title"><p className="eyebrow">MEMBER BENEFITS / 2026–2027</p><h2 id="benefits-title">Local connections.<br />Member-only offers.</h2><div className="benefits-feature"><div><span className="status-label">OFFER DETAILS COMING SOON</span><h3>Discounts at participating partner locations.</h3><p>We’re putting together the details of discounts at our sponsors’ and business partners’ retail locations. Participating locations, discount amounts, exclusions, and redemption terms will appear here once confirmed.</p><p className="form-help">Specific offers and participating locations will be confirmed here before redemption is available.</p><Link className="text-link" href="/sponsors">Meet our community partners ↗</Link></div><div className="benefit-card-illustration" aria-hidden="true"><span>BSS</span><p>YOUR COMMUNITY<br />IN YOUR POCKET</p><small>2026–2027 MEMBERSHIP</small></div></div><div className="section-top partners-heading"><div><p className="eyebrow">SIMPLE TO USE</p><h2>Your card. Three easy steps.</h2></div></div><ol className="benefit-steps"><li><span aria-hidden="true">01</span><h3>Join the community.</h3><p>Enter your details and complete the one-time membership payment.</p></li><li><span aria-hidden="true">02</span><h3>Save your digital card.</h3><p>After payment is verified, we email your membership card. Save the attached image to your phone.</p></li><li><span aria-hidden="true">03</span><h3>Show it. Scan it.</h3><p>Present your card at a participating location. The partner scans its QR code to verify your active membership and match your name.</p></li></ol><aside className="partner-invitation"><div><p className="eyebrow">ONE COMMUNITY / 2026–2027</p><h2>CA$15 new · CA$10 returning.</h2><p>Memberships expire September 1, 2027 at midnight, Calgary time. Individual offers may have their own dates and terms.</p></div><Link className="button" href="/membership">Membership signup ↗</Link></aside></section></main>;
+  return (
+    <main id="main-content" className="benefits-page">
+      <section className="benefits-hero">
+        <div className="container benefits-hero-inner">
+          <div className="benefits-hero-copy">
+            <p className="eyebrow"><span className="benefits-hero-mark" aria-hidden="true">✳</span> BSS MEMBER BENEFITS</p>
+            <h1>A little extra<br /><em>comes with belonging.</em></h1>
+            <p className="benefits-intro">Your BSS membership brings you closer to campus community and local Calgary favourites. Show your active membership when you visit to access these partner offers.</p>
+            <Link className="button" href="/membership">Become a member <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="benefits-hero-stamp" aria-label="Local partners, member perks">
+            <span className="stamp-orbit" aria-hidden="true">✳ &nbsp; LOCAL PARTNERS &nbsp; ✳ &nbsp; MEMBER PERKS &nbsp;</span>
+            <span className="stamp-center"><b>4</b><small>WAYS TO<br />SAVE</small></span>
+          </div>
+        </div>
+        <div className="benefits-ribbon" aria-hidden="true"><span>GOOD FOOD · GOOD PEOPLE · GOOD TOGETHER · </span><span>GOOD FOOD · GOOD PEOPLE · GOOD TOGETHER · </span></div>
+      </section>
+
+      <section className="container benefits-list-section" aria-labelledby="partner-offers-title">
+        <div className="benefits-section-heading">
+          <div><p className="eyebrow">YOUR MEMBERSHIP, A LITTLE MORE DELICIOUS</p><h2 id="partner-offers-title">Local love.<br /><em>Member perks.</em></h2></div>
+          <p>Four Calgary partners are making your BSS membership go a little further. Explore the offers below and check each partner’s terms before ordering.</p>
+        </div>
+
+        <div className="benefits-card-grid">
+          {benefits.map((benefit, index) => (
+            <article className={`benefit-card benefit-card-${benefit.id}`} key={benefit.id}>
+              <div className="benefit-card-topline"><span className="benefit-index">0{index + 1} / BSS PARTNER</span><span className="benefit-star" aria-hidden="true">✳</span></div>
+              <div className="benefit-wordmark">{benefit.logo && <div className="benefit-logo"><Image src={benefit.logo} alt={`${benefit.name} logo`} width={200} height={100} /></div>}<h3>{benefit.name}</h3></div>
+              <div className="benefit-offer-row"><p className="benefit-discount">{benefit.offer}</p><span className="benefit-scope">{benefit.scope}</span></div>
+              <p className="benefit-terms">{benefit.terms}</p>
+              {benefit.extra && <p className="benefit-extra"><span aria-hidden="true">✳</span> {benefit.extra}</p>}
+              <a className="benefit-source" href={benefit.sourceUrl} target="_blank" rel="noreferrer">Visit {benefit.name} <span aria-hidden="true">↗</span></a>
+            </article>
+          ))}
+        </div>
+        <p className="benefits-fine-print">Offers are for active BSS members and apply throughout the membership term unless stated otherwise. Promotional items and offers are excluded as listed. Please present your membership before checkout.</p>
+      </section>
+
+      <section className="benefits-join">
+        <div className="container benefits-join-inner">
+          <div><p className="eyebrow">MORE THAN THE SAVINGS</p><h2>Make room for<br /><em>more belonging.</em></h2><p>Meet people, celebrate culture, and find your place in the BSS community.</p></div>
+          <Link className="button button-outline" href="/membership">See membership <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
+    </main>
+  );
 }
