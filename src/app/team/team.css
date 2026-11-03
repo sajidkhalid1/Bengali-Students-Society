@@ -1,0 +1,35 @@
+.team-page { overflow: hidden; }
+.team-hero { position: relative; }
+.team-section { padding-top: 88px; }
+.team-intro { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 40px; }
+.team-intro h2 { margin-bottom: 0; }
+.team-intro .section-description { margin-bottom: 7px; }
+.team-departments { border-top: 1px solid var(--line); }
+.team-department { padding: 30px 0 34px; border-bottom: 1px solid var(--line); }
+.team-department-president { padding-block: 32px 38px; }
+.team-department-heading { display: flex; align-items: center; gap: 15px; margin-bottom: 19px; }
+.team-department-index { color: var(--red); font-size: .68rem; font-weight: 700; letter-spacing: .15em; }
+.team-department-heading h3 { margin: 0; font: 400 clamp(1.45rem, 2vw, 1.8rem)/1.1 Georgia, serif; }
+.team-department-rule { height: 1px; flex: 1; background: linear-gradient(90deg, var(--line), transparent); }
+.team-members { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.team-member { display: flex; align-items: center; gap: 17px; min-height: 105px; padding: 14px 18px; background: #0d3529; border: 1px solid var(--line); }
+.team-member-initials { width: 68px; height: 68px; display: grid; place-items: center; flex: 0 0 68px; border-radius: 50%; color: var(--gold); background: radial-gradient(ellipse at top right, #59734855, transparent 65%), linear-gradient(135deg, #164632, #082b22); border: 1px solid #54705d; font: 1.65rem Georgia, serif; letter-spacing: -.04em; }
+.team-member-copy { min-width: 0; }
+.team-member-copy .eyebrow { margin: 0 0 5px; font-size: .61rem; letter-spacing: .12em; }
+.team-member-copy h4 { margin: 0; font-size: .95rem; line-height: 1.35; overflow-wrap: anywhere; }
+.team-invitation { margin-top: 66px; }
+@media (max-width: 760px) {
+  .team-section { padding-top: 65px; }
+  .team-intro { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .team-intro .section-description { margin: 0; }
+  .team-members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-member { padding: 12px; gap: 12px; }
+  .team-member-initials { width: 58px; height: 58px; flex-basis: 58px; }
+}
+@media (max-width: 520px) {
+  .team-members { grid-template-columns: 1fr; }
+  .team-member { min-height: 92px; }
+  .team-member-initials { width: 56px; height: 56px; flex-basis: 56px; }
+  .team-department { padding-block: 25px 27px; }
+  .team-invitation { margin-top: 44px; }
+}

@@ -55,4 +55,13 @@ export const benefits: Benefit[] = [
     sourceUrl: "https://spiceavenue.ca/",
     sourceLabel: "Official website",
   },
+  {
+    id: "tiger-auto",
+    name: "Tiger Auto and Tires",
+    offer: "8% off",
+    scope: "BSS members · Fall & Winter terms",
+    terms: "Available throughout the Fall and Winter terms for BSS members. Present your active BSS membership card.",
+    sourceUrl: "/#contact",
+    sourceLabel: "Ask BSS for partner details",
+  },
 ];

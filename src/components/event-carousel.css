@@ -22,3 +22,5 @@
 @media (max-width: 760px) { .event-carousel .carousel-slide { flex-basis: 76%; } .event-carousel .carousel-track { gap: 16px; } }
 @media (prefers-reduced-motion: reduce) { .event-carousel .carousel-slide { animation: none; } .event-carousel .carousel-track { scroll-behavior: auto; } }
 .event-carousel .carousel-track::after { content: none; display: none; }
+.event-carousel .carousel-track.is-coasting { cursor: grab; }
+.event-carousel:is(:hover, :focus-within) .carousel-slide { animation-play-state: paused; }

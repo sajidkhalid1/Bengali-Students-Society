@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 .footer-links { display: flex; flex-wrap: wrap; gap: 12px 22px; font-size: .8rem; }
+.event-supporters { padding-bottom: 80px; }
+.event-supporters > .text-link { margin-top: 24px; }
+.food-partner-logo { height: 160px; width: 100%; object-fit: contain; background: var(--cream); padding: 24px; border-radius: 4px; margin-bottom: 20px; }
+.workshop-partners { padding-block: 20px 80px; }
+.workshop-partners > p:not(.eyebrow) { max-width: 850px; color: var(--muted); }
+.workshop-people-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-top: 36px; }
+.workshop-people-grid .sponsor-card { padding: 26px 20px; }
+.workshop-people-grid .sponsor-portrait { width: 140px; height: 140px; }
+.workshop-people-grid h3 { font-size: 1.65rem; overflow-wrap: anywhere; }
+.workshop-collaboration { padding: clamp(24px, 4vw, 40px); border-left: 2px solid var(--gold); background: #103b2d; margin-top: 32px; }
+.workshop-collaboration h3 { font: 2rem/1.2 Georgia, serif; }
+@media (max-width: 1080px) { .workshop-people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .workshop-people-grid { grid-template-columns: 1fr; } }
 .membership-contributions { padding-bottom: 100px; }
 .membership-contributions .contribution-panel { max-width: none; }
 .contribution-email { overflow-wrap: anywhere; color: var(--gold); }

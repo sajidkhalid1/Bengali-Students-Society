@@ -42,7 +42,7 @@ export default function Home() {
       <section id="events" className="events-section section"><div className="container">
         <div className="section-top"><SectionHeading eyebrow="02 / MAKE SOME MEMORIES" title="Good things ahead." /><p className="side-note">A glimpse of what we’re planning.<br />Explore our annual traditions.</p></div>
         <SeasonHighlights /><EventCarousel />
-        <p className="events-note">Meet and Greet, Career Workshop 2026, Asia Cup, Pitha Utshob, iftars, Royal Mezban—and new experiences for the year ahead.</p><Link className="text-link" href="/events">Explore all our events ↗</Link>
+        <p className="events-note">Cha & Chill (Meet and Greet), Career Workshop 2026, Asia Cup, Pitha Utshob, iftars, Royal Mezban—and new experiences for the year ahead.</p><Link className="text-link" href="/events">Explore all our events ↗</Link>
       </div></section>
 
       <SectionMorph from="#092f25" to="#06271e" />
